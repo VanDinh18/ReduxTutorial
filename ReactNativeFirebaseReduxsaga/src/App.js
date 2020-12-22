@@ -19,7 +19,10 @@ export default function App() {
     return (
         <Provider store={store}>
             <NavigationContainer>
-                <Root.Navigator>
+                <Root.Navigator
+                    screenOptions={{
+                        headerShown: false
+                    }}>
                     <Root.Screen name="Loading" component={Loading} />
                     <Root.Screen name="SignUp" component={SignUp} />
                     <Root.Screen name="Main" component={Main} />

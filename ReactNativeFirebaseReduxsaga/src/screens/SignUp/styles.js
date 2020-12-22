@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    text_signup: {
+        fontSize: 24
+    },
     btn_signup: {
         height: 50,
         width: 150,
@@ -21,6 +24,20 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    text_input_email: {
+        height: 40,
+        width: '90%',
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginTop: 8
+    },
+    text_input_password: {
+        height: 40,
+        width: '90%',
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginTop: 8
     }
 });
 

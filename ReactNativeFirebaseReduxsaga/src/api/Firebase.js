@@ -1,14 +1,14 @@
 import auth from '@react-native-firebase/auth';
 
 export const User = {
-    loginWithEmail: () => {
+    loginWithEmail: (userInfo) => {
         return auth()
-            .signInWithEmailAndPassword('jane.doe@example.com', 'SuperSecretPassword!')
+            .signInWithEmailAndPassword(userInfo.email, userInfo.password)
             .then(() => {
                 console.log("login succesful!");
             })
             .catch(error => {
-                console.error(error);
+                console.log(error)
             })
     },
     signUpWithEmailPassword: () => {

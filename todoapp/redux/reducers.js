@@ -14,6 +14,7 @@ const initialState = {
 };
 
 export const todos_reducer = (state = initialState, action) => {
+    console.log("reducer: ", action)
     switch (action.type) {
         case 'ADD_TODO':
             return {

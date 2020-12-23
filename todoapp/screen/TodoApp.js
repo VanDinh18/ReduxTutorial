@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     SafeAreaView,
     StyleSheet,
@@ -7,36 +7,77 @@ import {
     Text,
     StatusBar,
     TouchableOpacity,
+    Dimensions,
+    TextInput,
+    FlatList,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { addTodo, deleteTodo } from '../redux/actions';
 
-const TodoApp = (props) => {
 
-    useEffect(() => {
-        console.log("todo_list", props)
-    }, [props]);
+const height_device = Dimensions.get("window").height;
+const width_device = Dimensions.get("window").width;
+
+const TodoApp = ({ todo_list, addTodo, deleteTodo }) => {
+
+    const [task, setTask] = useState("");
 
     const handleAddTodo = () => {
-        addTodo("zenga vietnam")
+        addTodo(task);
+        setTask("")
     }
-    const handleDelTodo = () => {
-
+    const handleDelTodo = (id) => {
+        deleteTodo(id)
     }
 
     return (
-        <View style={styles.container}>
-            <TouchableOpacity
-                style={styles.btn_add}
-                onPress={handleAddTodo}>
-                <Text>ADD</Text>
-            </TouchableOpacity>
-        </View>
+        <SafeAreaView style={styles.container}>
+
+            <View style={styles.header}>
+                <Text>Add ToDo Here</Text>
+                <TextInput
+                    placeholder="Task"
+                    onChangeText={(text) => setTask(text)}
+                    style={styles.textinput}
+                    value={task}
+                />
+                <TouchableOpacity
+                    style={styles.btn_add}
+                    onPress={handleAddTodo}>
+                    <Text>ADD</Text>
+                </TouchableOpacity>
+            </View>
+            <FlatList
+                data={todo_list}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item, index }) => {
+                    return (
+                        <View style={styles.view_item} key={index}>
+                            <Text>{item.task}</Text>
+                            <TouchableOpacity
+                                style={styles.btn_del}
+                                onPress={() => handleDelTodo(item.id)}
+                            >
+                                <Text>DEL</Text>
+                            </TouchableOpacity>
+                        </View>
+                    )
+                }} />
+
+        </SafeAreaView>
+
     )
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#ecf0f1',
+    },
+    header: {
+        height: height_device / 3,
+        width: width_device - 20,
+        backgroundColor: 'white'
     },
     btn_add: {
         width: 100,
@@ -44,9 +85,34 @@ const styles = StyleSheet.create({
         backgroundColor: 'green'
     },
     btn_del: {
-        width: 100,
+        width: 50,
         height: 50,
         backgroundColor: 'red'
     },
+    textinput: {
+        height: 80,
+        width: width_device - 40,
+
+    },
+    view_item: {
+        height: 50,
+        width: width_device - 20,
+        backgroundColor: "white",
+        flexDirection: 'row'
+    },
 })
-export default TodoApp;
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        todo_list: state.todo_list,
+    }
+}
+
+const mapDispatchToProps = {
+    addTodo,
+    deleteTodo,
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(TodoApp);

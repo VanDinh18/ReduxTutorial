@@ -1,4 +1,3 @@
-import { create } from "react-test-renderer";
 import { createStore } from "redux";
 import { counter_reducer, todos_reducer } from './reducers';
 

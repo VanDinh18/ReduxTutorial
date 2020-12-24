@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, ActivityIndicator, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
-import auth from '@react-native-firebase/auth';
-
-
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import * as ActionTypes from './../../redux/actionTypes';
+import { connect } from 'react-redux';
 
 import { styles } from './styles';
-import { useNavigation } from '@react-navigation/native';
 
-export default function SignUp() {
+function Login(props) {
     const navigation = useNavigation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    const handleSignUp = () => {
-
-    }
     const handleLogin = () => {
-        navigation.navigate('Login')
+        // User.loginWithEmail();
+        let userInfo = {
+            email: email,
+            password: password
+        }
+        props.dispatch({ type: ActionTypes.LOGIN, userInfo });
     }
     return (
         <View style={styles.container}>
-            <Text style={styles.text_signup}>Sign Up</Text>
+            <Text style={styles.text_login}>Login</Text>
             <TextInput
                 placeholder="Email"
                 autoCapitalize="none"
@@ -36,15 +36,19 @@ export default function SignUp() {
                 value={password}
             />
             <TouchableOpacity
-                style={styles.btn_signup}
-                onPress={handleSignUp}>
-                <Text>Sign up</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
                 style={styles.btn_login}
                 onPress={handleLogin}>
-                <Text>Are you have a account?</Text>
+                <Text>Login</Text>
             </TouchableOpacity>
         </View>
     )
 }
+
+const mapStateToProps = state => ({
+    user: state.user
+})
+const mapDispatchToProps = dispatch => ({
+    dispatch: dispatch
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

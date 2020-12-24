@@ -6,24 +6,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    text_signup: {
-        fontSize: 24
-    },
-    btn_signup: {
-        height: 50,
-        width: 150,
-        backgroundColor: 'red',
-        borderRadius: 25,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    btn_login: {
-        height: 50,
-        width: 150,
-        backgroundColor: 'green',
-        borderRadius: 25,
-        justifyContent: 'center',
-        alignItems: 'center',
+    text_login: {
+        fontSize: 24,
+        color: 'blue'
     },
     text_input_email: {
         height: 40,
@@ -38,6 +23,14 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: 1,
         marginTop: 8
+    },
+    btn_login: {
+        height: 50,
+        width: 150,
+        borderRadius: 25,
+        backgroundColor: 'green',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });
 

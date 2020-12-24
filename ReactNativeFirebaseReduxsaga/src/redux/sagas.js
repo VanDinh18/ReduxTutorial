@@ -5,6 +5,7 @@ import * as UserSaga from './../redux/user/saga';
 
 export default function* rootSaga() {
     yield all([
-        yield takeLatest(ActionTypes.LOGIN, UserSaga.loginWithEmail)
+        yield takeLatest(ActionTypes.LOGIN, UserSaga.loginWithEmailSaga),
+        yield takeLatest(ActionTypes.SIGNUP, UserSaga.signUpWithEmailPasswordSaga)
     ])
 }

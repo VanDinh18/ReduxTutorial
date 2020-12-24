@@ -9,6 +9,14 @@ const userReducer = (state = initialState, action) => {
             return Object.assign({}, state)
         case ActionTypes.LOGIN_SUCCESS:
             return Object.assign({}, state)
+        case ActionTypes.LOGIN_FAIL:
+            return Object.assign({}, state)
+        case ActionTypes.SIGNUP:
+            return Object.assign({}, state)
+        case ActionTypes.SIGNUP_SUCCESS:
+            return Object.assign({}, state)
+        case ActionTypes.SIGNUP_FAIL:
+            return Object.assign({}, state)
         default:
             return state;
     }

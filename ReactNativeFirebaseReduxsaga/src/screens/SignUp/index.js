@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, ActivityIndicator, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
-import auth from '@react-native-firebase/auth';
-
-
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { styles } from './styles';
-import { useNavigation } from '@react-navigation/native';
+
 
 export default function SignUp() {
     const navigation = useNavigation();

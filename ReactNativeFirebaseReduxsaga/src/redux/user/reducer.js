@@ -3,20 +3,20 @@ import * as ActionTypes from './../actionTypes';
 const initialState = {};
 
 const userReducer = (state = initialState, action) => {
-    console.log('userReducer', JSON.stringify(action));
+    console.log('userReducer', action);
     switch (action.type) {
         case ActionTypes.LOGIN:
-            return Object.assign({}, state)
+            return Object.assign({}, action)
         case ActionTypes.LOGIN_SUCCESS:
-            return Object.assign({}, state)
+            return Object.assign({}, action)
         case ActionTypes.LOGIN_FAIL:
-            return Object.assign({}, state)
+            return Object.assign({}, action)
         case ActionTypes.SIGNUP:
-            return Object.assign({}, state)
+            return Object.assign({}, action)
         case ActionTypes.SIGNUP_SUCCESS:
-            return Object.assign({}, state)
+            return Object.assign({}, action)
         case ActionTypes.SIGNUP_FAIL:
-            return Object.assign({}, state)
+            return Object.assign({}, action)
         default:
             return state;
     }

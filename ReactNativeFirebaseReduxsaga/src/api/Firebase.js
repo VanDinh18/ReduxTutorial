@@ -6,7 +6,6 @@ export const User = {
         return response;
     },
     signUpWithEmailPassword: async (userParam) => {
-        console.log(userParam);
         const response = await auth().createUserWithEmailAndPassword(userParam.userInfo.email, userParam.userInfo.password);
         return response;
         // try {

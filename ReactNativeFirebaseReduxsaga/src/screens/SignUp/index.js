@@ -17,11 +17,16 @@ function SignUp(props) {
             email: email,
             password: password
         }
+        // setEmail("");
+        // setPassword("");
         props.dispatch({ type: ActionTypes.SIGNUP, userInfo });
     }
     const handleLogin = () => {
         navigation.navigate('Login')
     }
+    useEffect(() => {
+        console.log("props signup: ", props)
+    }, [props])
     return (
         <View style={styles.container}>
             <Text style={styles.text_signup}>Sign Up</Text>
@@ -53,7 +58,7 @@ function SignUp(props) {
     )
 }
 const mapStateToProps = state => ({
-    use: state.user
+    user: state.user
 })
 const mapDispatchToProps = dispatch => ({
     dispatch: dispatch

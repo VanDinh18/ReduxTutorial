@@ -29,7 +29,8 @@ export function* signUpWithEmailPasswordSaga(action) {
         yield put({ type: ActionTypes.SIGNUP_SUCCESS, response });
     }
     catch (error) {
-        console.log("singup saga error", error);
+        console.log("singup saga error");
+        console.log(error)
         yield put({ type: ActionTypes.SIGNUP_FAIL, error });
     }
 }

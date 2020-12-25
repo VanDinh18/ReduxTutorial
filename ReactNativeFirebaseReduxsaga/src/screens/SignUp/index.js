@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { connect } from 'react-redux';
 
+import * as ActionTypes from '../../redux/actionTypes';
 import { styles } from './styles';
 
 
-export default function SignUp() {
+function SignUp(props) {
     const navigation = useNavigation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSignUp = () => {
-
+        let userInfo = {
+            email: email,
+            password: password
+        }
+        props.dispatch({ type: ActionTypes.SIGNUP, userInfo });
     }
     const handleLogin = () => {
         navigation.navigate('Login')
@@ -46,3 +52,10 @@ export default function SignUp() {
         </View>
     )
 }
+const mapStateToProps = state => ({
+    use: state.user
+})
+const mapDispatchToProps = dispatch => ({
+    dispatch: dispatch
+})
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)

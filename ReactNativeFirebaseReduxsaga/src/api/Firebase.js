@@ -7,7 +7,7 @@ export const User = {
     },
     signUpWithEmailPassword: async (userParam) => {
         console.log(userParam);
-        const response = await auth().createUserWithEmailAndPassword('jane.doe@example.com', 'SuperSecretPassword!');
+        const response = await auth().createUserWithEmailAndPassword(userParam.userInfo.email, userParam.userInfo.password);
         return response;
         // try {
         //     await auth()

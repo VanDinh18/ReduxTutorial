@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { connect } from 'react-redux';
+import {
+    GoogleSignin,
+    GoogleSigninButton,
+    statusCodes,
+} from '@react-native-community/google-signin';
 
 import * as ActionTypes from '../../redux/actionTypes';
 import { styles } from './styles';
@@ -17,15 +22,18 @@ function SignUp(props) {
             email: email,
             password: password
         }
-        // setEmail("");
-        // setPassword("");
+        setEmail("");
+        setPassword("");
         props.dispatch({ type: ActionTypes.SIGNUP, userInfo });
     }
-    const handleLogin = () => {
+    const handleLoginEmailPassword = () => {
         navigation.navigate('Login')
     }
+    const handleLoginGoogle = () => {
+
+    }
     useEffect(() => {
-        console.log("props signup: ", props)
+
     }, [props])
     return (
         <View style={styles.container}>
@@ -51,8 +59,13 @@ function SignUp(props) {
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.btn_login}
-                onPress={handleLogin}>
+                onPress={handleLoginEmailPassword}>
                 <Text>Are you have a account?</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.btn_google}
+                onPress={handleLoginGoogle}>
+                <Text>Google</Text>
             </TouchableOpacity>
         </View>
     )

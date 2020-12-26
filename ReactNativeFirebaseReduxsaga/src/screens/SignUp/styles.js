@@ -25,6 +25,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    btn_google: {
+        height: 50,
+        width: 150,
+        backgroundColor: 'white',
+        borderRadius: 25,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: 'blue'
+    },
     text_input_email: {
         height: 40,
         width: '90%',

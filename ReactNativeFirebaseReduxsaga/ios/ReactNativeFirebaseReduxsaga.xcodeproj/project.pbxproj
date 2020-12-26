@@ -18,7 +18,7 @@
 		5C973E807C86FC98060F0E1F /* libPods-ReactNativeFirebaseReduxsaga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C674ACDB3123B82006A4FC /* libPods-ReactNativeFirebaseReduxsaga.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8EEA7CFC9DB488A5B1AB68E0 /* libPods-ReactNativeFirebaseReduxsaga-ReactNativeFirebaseReduxsagaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B662C9CF0DD3156A2E3A7D /* libPods-ReactNativeFirebaseReduxsaga-ReactNativeFirebaseReduxsagaTests.a */; };
-		98C0AA5A2596FE4E00E96E80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98C0AA592596FE4E00E96E80 /* GoogleService-Info.plist */; };
+		98A2002F25972259007D244E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A2002E25972259007D244E /* GoogleService-Info.plist */; };
 		CAAD4FB475B3219F349402D2 /* libPods-ReactNativeFirebaseReduxsaga-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF803E3681864BA62BBB380 /* libPods-ReactNativeFirebaseReduxsaga-tvOS.a */; };
 		CAFD3453A75F51B6EE614D44 /* libPods-ReactNativeFirebaseReduxsaga-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B7445DFA4FA7565E39441A /* libPods-ReactNativeFirebaseReduxsaga-tvOSTests.a */; };
 /* End PBXBuildFile section */
@@ -59,7 +59,7 @@
 		6EF803E3681864BA62BBB380 /* libPods-ReactNativeFirebaseReduxsaga-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeFirebaseReduxsaga-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeFirebaseReduxsaga/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F511198C646A26841437A88 /* Pods-ReactNativeFirebaseReduxsaga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeFirebaseReduxsaga.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeFirebaseReduxsaga/Pods-ReactNativeFirebaseReduxsaga.release.xcconfig"; sourceTree = "<group>"; };
-		98C0AA592596FE4E00E96E80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		98A2002E25972259007D244E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F4258027AFF86BA30E08081 /* Pods-ReactNativeFirebaseReduxsaga-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeFirebaseReduxsaga-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeFirebaseReduxsaga-tvOS/Pods-ReactNativeFirebaseReduxsaga-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AA103821C3A30153ECD6FF96 /* Pods-ReactNativeFirebaseReduxsaga-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeFirebaseReduxsaga-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeFirebaseReduxsaga-tvOSTests/Pods-ReactNativeFirebaseReduxsaga-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0BB51045B583F99DD1E21F7 /* Pods-ReactNativeFirebaseReduxsaga-ReactNativeFirebaseReduxsagaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeFirebaseReduxsaga-ReactNativeFirebaseReduxsagaTests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeFirebaseReduxsaga-ReactNativeFirebaseReduxsagaTests/Pods-ReactNativeFirebaseReduxsaga-ReactNativeFirebaseReduxsagaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		13B07FAE1A68108700A75B9A /* ReactNativeFirebaseReduxsaga */ = {
 			isa = PBXGroup;
 			children = (
-				98C0AA592596FE4E00E96E80 /* GoogleService-Info.plist */,
+				98A2002E25972259007D244E /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -345,7 +345,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				98C0AA5A2596FE4E00E96E80 /* GoogleService-Info.plist in Resources */,
+				98A2002F25972259007D244E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

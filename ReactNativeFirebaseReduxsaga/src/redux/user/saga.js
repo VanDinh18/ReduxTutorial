@@ -8,13 +8,10 @@ export function* loginWithEmailSaga(action) {
     try {
         console.log('userSaga action --', action);
         const state = yield select();
-        console.log('UserSaga state-- ', state);
         const response = yield call(Firebase.User.loginWithEmail, action);
-        console.log('User Saga Response', JSON.stringify(response));
         yield put({ type: ActionTypes.LOGIN_SUCCESS, response })
     }
     catch (error) {
-        console.log('UserSaga', JSON.stringify(error));
         yield put({ type: ActionTypes.LOGIN_FAIL, error });
     }
 }
@@ -25,12 +22,9 @@ export function* signUpWithEmailPasswordSaga(action) {
         const state = yield select();
         console.log("state", state);
         const response = yield call(Firebase.User.signUpWithEmailPassword, action);
-        console.log("response", response);
         yield put({ type: ActionTypes.SIGNUP_SUCCESS, response });
     }
     catch (error) {
-        console.log("singup saga error");
-        console.log(error)
         yield put({ type: ActionTypes.SIGNUP_FAIL, error });
     }
 }

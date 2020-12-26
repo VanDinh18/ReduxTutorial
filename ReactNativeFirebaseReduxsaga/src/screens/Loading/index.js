@@ -18,8 +18,9 @@ export default function Loading() {
     }, []);
 
     const onAuthStateChanged = (user) => {
-        console.log("user", user);
+
         if (user) {
+            console.log("user", user._user);
             navigation.navigate("Main");
         }
         else {
